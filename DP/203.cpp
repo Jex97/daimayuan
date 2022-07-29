@@ -2,6 +2,8 @@
 // Created by 74680 on 2022/7/29.
 //
 
+// 多重背包 n
+
 #include<bits/stdc++.h>
 using namespace std;
 

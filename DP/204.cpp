@@ -2,9 +2,8 @@
 // Created by 74680 on 2022/7/29.
 //
 
-
+// 多重背包 logn
 // note: ret -= k; 要写在 k *= 2前
-
 #include<bits/stdc++.h>
 using namespace std;
 

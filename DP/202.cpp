@@ -5,6 +5,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// 完全背包
 
 int solver202(){
     int m, n;

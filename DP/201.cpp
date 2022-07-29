@@ -6,6 +6,8 @@
 
 using namespace std;
 
+// 0-1背包
+
 int solver201(){
     int n, m;
     cin >> n >> m;
