@@ -3,4 +3,4 @@ project(daimayuan)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(daimayuan main.cpp DP/101.cpp DP/102.cpp DP/103.cpp DP/104.cpp DP/105.cpp)
+add_executable(daimayuan main.cpp DP/101.cpp DP/102.cpp DP/103.cpp DP/104.cpp DP/105.cpp DP/201.cpp DP/202.cpp DP/203.cpp DP/204.cpp)
