@@ -1,8 +1,8 @@
-#include<iostream>
-#include<vector>
-#include<climits>
+#include<bits/stdc++.h>
 using namespace std;
 
+
+// INT_MAX 头文件为 climits
 int main() {
     int n;
     cin >> n;
