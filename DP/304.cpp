@@ -1,0 +1,31 @@
+#include<iostream>
+#include<vector>
+#include<climits>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<int> v(n + 1);
+    for (int i = 1; i <= n; ++i) {
+        cin >> v[i];
+    }
+
+    vector<vector<int>> dp(n + 1, vector<int>(n + 1, INT_MAX / 3));
+
+    for (int len = 1; len <= n; ++len) {
+        for (int i = 1; i + len - 1 <= n; ++i) {
+            int j = i + len - 1;
+            if (len < 3) dp[i][j] = 0;
+            else {
+                for (int k = i + 1; k < j; ++k) {
+                    dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j] + v[i] * v[k] * v[j]);
+                }
+            }
+        }
+    }
+    cout << dp[1][n] << endl;
+
+    return 0;
+}
