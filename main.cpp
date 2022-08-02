@@ -4,7 +4,7 @@ int solver303();
 int main() {
     // INIT
     // test git
-    solver303();
+    //solver303();
 
     return 0;
 }
