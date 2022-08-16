@@ -3,6 +3,8 @@ using namespace std;
 
 
 // INT_MAX 头文件为 climits
+
+
 int solver304() {
     int n;
     cin >> n;
