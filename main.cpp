@@ -1,10 +1,10 @@
 #include <iostream>
 
-int solver503();
+int solver603();
 int main() {
     // INIT
     // test git
-    solver503();
+    solver603();
 
     return 0;
 }
