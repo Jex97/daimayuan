@@ -1,14 +1,10 @@
 
 #include<bits/stdc++.h>
-
-using namespace std;
-
-int solver702();
+int solver705();
 int main() {
     // INIT
     // test git
-    cout << "Running 702" << endl;
-    solver702();
+    solver705();
 
     return 0;
 }
