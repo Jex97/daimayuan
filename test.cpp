@@ -6,82 +6,82 @@
 
 using namespace std;
 
-//class Point{
-//public:
-//    double x, y, z;
-//    int oldId;
-//    int EntryDim;
-//    int EntryDimID;
-//    bool operator<(const Point& _rhs){
-//        return EntryDim < _rhs.EntryDim || ((EntryDim == _rhs.EntryDim) && EntryDimID < _rhs.EntryDimID);
-//    }
-//};
-//
-//vector<Point> Read(ifstream& input1){
-//
-//    string line;
-//    bool f = false;
-//    vector<Point> data1;
-//    int dim;
-//    int id;
-//    int oldID = 1;
-//    while(getline(input1, line)){
-//
-//        if(line == "$Nodes") {f = true; getline(input1, line); continue;}
-//        else if(line == "$EndNodes") break;
-//
-//        if(f == false) continue;
-//        stringstream ss(line);
-//        int para, k;
-//        ss >> dim >> id >> para >> k;
-//
-//        for(int i = 0; i < k; ++i){
-//            getline(input1, line);
-//        }
-//        for(int i = 0; i < k; ++i){
-//            getline(input1, line);
-//            double x, y, z;
-//            stringstream ssTemp(line);
-//            ssTemp >> x >> y >> z;
-//            data1.push_back({x, y, z, oldID, dim, id});
-//            oldID++;
-//            cout << x << " " << y << " " << z << endl;
-//        }
-//    }
-//    return data1;
-//}
-//
-//double CalcDis(Point& p1, Point& p2){
-//    double deltaX = p1.x - p2.x;
-//    double deltaY = p1.y - p2.y;
-//    double deltaZ = p1.z - p2.z;
-//    return sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
-//}
-//
-//int main(){
-//    ifstream input1("C:\\Users\\74680\\Desktop\\HighOrderMesh\\model_stp\\Example18.msh");
-//    ifstream input2("C:\\Users\\74680\\Desktop\\HighOrderMesh\\model_stp\\my18.msh");
-//    auto data1 = Read(input1);
-//    auto data2 = Read(input2);
-//
-//    for(auto& p : data2){
-//        double err = 10000;
-//        Point nP = data1[0];
-//        for(auto& pp : data1){
-//            double curErr = CalcDis(p, pp);
-//            if(curErr < err){
-//                err = curErr;
-//                nP = pp;
-//            }
-//        }
-//        p.EntryDim = nP.EntryDim;
-//        p.EntryDimID = nP.EntryDimID;
-//    }
-//    sort(data2.begin(), data2.end());
-//
-//
-//    return 0;
-//}
+class Point{
+public:
+    double x, y, z;
+    int oldId;
+    int EntryDim;
+    int EntryDimID;
+    bool operator<(const Point& _rhs){
+        return EntryDim < _rhs.EntryDim || ((EntryDim == _rhs.EntryDim) && EntryDimID < _rhs.EntryDimID);
+    }
+};
+
+vector<Point> Read(ifstream& input1){
+
+    string line;
+    bool f = false;
+    vector<Point> data1;
+    int dim;
+    int id;
+    int oldID = 1;
+    while(getline(input1, line)){
+
+        if(line == "$Nodes") {f = true; getline(input1, line); continue;}
+        else if(line == "$EndNodes") break;
+
+        if(f == false) continue;
+        stringstream ss(line);
+        int para, k;
+        ss >> dim >> id >> para >> k;
+
+        for(int i = 0; i < k; ++i){
+            getline(input1, line);
+        }
+        for(int i = 0; i < k; ++i){
+            getline(input1, line);
+            double x, y, z;
+            stringstream ssTemp(line);
+            ssTemp >> x >> y >> z;
+            data1.push_back({x, y, z, oldID, dim, id});
+            oldID++;
+            cout << x << " " << y << " " << z << endl;
+        }
+    }
+    return data1;
+}
+
+double CalcDis(Point& p1, Point& p2){
+    double deltaX = p1.x - p2.x;
+    double deltaY = p1.y - p2.y;
+    double deltaZ = p1.z - p2.z;
+    return sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
+}
+
+int main1(){
+    ifstream input1("C:\\Users\\74680\\Desktop\\HighOrderMesh\\model_stp\\Example18.msh");
+    ifstream input2("C:\\Users\\74680\\Desktop\\HighOrderMesh\\model_stp\\my18.msh");
+    auto data1 = Read(input1);
+    auto data2 = Read(input2);
+
+    for(auto& p : data2){
+        double err = 10000;
+        Point nP = data1[0];
+        for(auto& pp : data1){
+            double curErr = CalcDis(p, pp);
+            if(curErr < err){
+                err = curErr;
+                nP = pp;
+            }
+        }
+        p.EntryDim = nP.EntryDim;
+        p.EntryDimID = nP.EntryDimID;
+    }
+    sort(data2.begin(), data2.end());
+
+
+    return 0;
+}
 
 #include<bits/stdc++.h>
 

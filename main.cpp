@@ -1,10 +1,10 @@
 
 #include<bits/stdc++.h>
-int solver705();
+int solver804();
 int main() {
     // INIT
     // test git
-    solver705();
+    solver804();
 
     return 0;
 }
