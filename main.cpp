@@ -3,13 +3,13 @@
 
 using namespace std;
 
-int solverm1301();
+int solver805();
 
 int main() {
     // INIT
     // test git
-    cout << "Running solverm1301" << endl;
-    solverm1301();
+    cout << "Running solver805" << endl;
+    solver805();
 
     return 0;
 }
